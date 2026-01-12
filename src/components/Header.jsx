@@ -5,7 +5,7 @@ import { GiTireIronCross } from "react-icons/gi";
 import { MdHistory } from "react-icons/md";
 import { VscMenu } from "react-icons/vsc";
 import axios from "axios";
-import Popup from "./PopUp";
+import Popup from "./Popup";
 
 const Header = () => {
   // props = { userName, onLogout }

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
-import Popup from "../components/PopUp";
+import Popup from "../components/Popup";
 import TripDetails from "../components/TripDetails";
 import useFetch from "../useFetch";
 
