@@ -40,7 +40,10 @@ const Header = () => {
         localStorage.setItem("user", JSON.stringify(resp?.data));
       })
       .catch((error) => setgoogleError(error))
-      .finally(() => setShowPopup(false));
+      .finally(() => {
+        window.location.reload();
+        setShowPopup(false);
+      });
   };
 
   const login = useGoogleLogin({
