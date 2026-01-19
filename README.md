@@ -1,16 +1,197 @@
-# React + Vite
+# TRai - trip planner
+An AI trip planner app including user authentication allows users to generate personalized travel itineraries by simply entering a destination name and the number of days they plan to stay. Each generated
+itinerary includes a day-wise breakdown of suggested activities.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Built with React frontend, Express/Node backend, Google OAuth authentication and MongoDB database.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo Link
+[Live Demo](https://trai-trip-planner-rsx8.vercel.app)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Quick Start
+```
+git clone https://github.com/Sowhom638/Trai-Trip-Planner
+cd <Your-Repo>
+npm install
+npm run dev
+```
+---
 
-## Expanding the ESLint configuration
+## Technologies
+- React JS
+- React Router Dom
+- Tailwind CSS
+- Google OAuth
+- Node JS
+- Express JS
+- MongoDB
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Features
+**Google Authentication**
+- User can Sign in/Sign up using gmail account
+
+**Itinerary Generator**
+- User can enter place's name and number of days they want to travel that place from dropdown and     generate the itinerary of that trip.
+
+**Trip History Dashboard**
+- User can see previous trip histories
+
+---
+
+## API References
+### Itineraries
+**POST /generate-itinerary**
+Create a new itinerary
+Sample Response
+```
+{ _id, 
+userId, 
+location, 
+noOfDays, 
+itinerary: [
+    day 1: {
+        places: [
+            {
+                _id,
+                placeName,
+                bestTimeToVisit,
+                placeDetails,
+                timeToTravelFromPrevious
+            },
+            {
+                _id,
+                placeName,
+                bestTimeToVisit,
+                placeDetails,
+                timeToTravelFromPrevious
+            }
+        ]
+    },
+    day 2: { ... },
+    day 3: { ... },
+]
+}
+```
+
+**GET /itineraries**
+Get all Itineraries
+Sample Response
+```
+[
+{ _id, 
+userId, 
+location, 
+noOfDays, 
+itinerary: [
+    day 1: {
+        places: [
+            {
+                _id,
+                placeName,
+                bestTimeToVisit,
+                placeDetails,
+                timeToTravelFromPrevious
+            },
+            {
+                _id,
+                placeName,
+                bestTimeToVisit,
+                placeDetails,
+                timeToTravelFromPrevious
+            }
+        ]
+    },
+    day 2: { ... },
+    day 3: { ... },
+]
+},
+{ _id, 
+userId, 
+location, 
+noOfDays, 
+itinerary: [
+    day 1: {
+        places: [
+            {
+                _id,
+                placeName,
+                bestTimeToVisit,
+                placeDetails,
+                timeToTravelFromPrevious
+            },
+            {
+                _id,
+                placeName,
+                bestTimeToVisit,
+                placeDetails,
+                timeToTravelFromPrevious
+            }
+        ]
+    },
+    day 2: { ... },
+    day 3: { ... },
+]
+},
+...
+]
+```
+
+**GET /itineraries/:id**
+Get Itineraries by it's id
+Sample Response
+```
+{ _id, 
+userId, 
+location, 
+noOfDays, 
+itinerary: [
+    day 1: {
+        places: [
+            {
+                _id,
+                placeName,
+                bestTimeToVisit,
+                placeDetails,
+                timeToTravelFromPrevious
+            },
+            {
+                _id,
+                placeName,
+                bestTimeToVisit,
+                placeDetails,
+                timeToTravelFromPrevious
+            }
+        ]
+    },
+    day 2: { ... },
+    day 3: { ... },
+]
+}
+```
+
+**GET /auth/users**
+Get all users
+Sample Response
+```
+[
+    {_id, name, email, picture, createdAt},
+    {_id, name, email, picture, createdAt}
+]
+```
+
+**POST /auth/google-login**
+Create new user
+Sample Response
+```
+{_id, name, email, picture, createdAt}
+```
+
+---
+
+## Contact
+for bugs informing or feature requesting , reach out to ghoshsowhom638@gmail.com
