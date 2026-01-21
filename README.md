@@ -173,7 +173,7 @@ itinerary: [
 ]
 }
 ```
-
+### Users
 **GET /auth/users**
 Get all users
 Sample Response
