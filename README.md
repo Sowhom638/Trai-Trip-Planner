@@ -25,8 +25,8 @@ npm run dev
 - React Router Dom
 - Tailwind CSS
 - Google OAuth
-- Node JS
-- Express JS
+- Node.js
+- Express.js
 - MongoDB
 
 ---
