@@ -23,6 +23,7 @@ npm run dev
 ## Technologies
 - React JS
 - React Router Dom
+- Gemini
 - Tailwind CSS
 - Google OAuth
 - Node.js
