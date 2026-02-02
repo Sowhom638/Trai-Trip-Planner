@@ -16,7 +16,7 @@ export default function Create_Trip() {
   const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
-    const data = localStorage.getItem("user");
+    const data = sessionStorage.getItem("user");
     const userDetails = JSON.parse(data);
     setUserInfo(userDetails);
   }, []);
@@ -48,7 +48,7 @@ export default function Create_Trip() {
             picture: resp?.data?.picture,
           }
         );
-        localStorage.setItem("user", JSON.stringify(resp?.data));
+        sessionStorage.setItem("user", JSON.stringify(resp?.data));
       })
       .catch((error) => setgoogleError(error))
       .finally(() => {
@@ -69,7 +69,7 @@ export default function Create_Trip() {
     });
   };
   const onGenerateTrip = async () => {
-    const user = localStorage.getItem("user");
+    const user = sessionStorage.getItem("user");
     if (!user) {
       setShowPopup(true);
       return;

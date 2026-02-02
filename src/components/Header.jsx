@@ -15,7 +15,7 @@ const Header = () => {
   const [isMenubarOpen, setIsMenuBarOpen] = useState(false);
 
   useEffect(() => {
-    const data = localStorage.getItem("user");
+    const data = sessionStorage.getItem("user");
     const userDetails = JSON.parse(data);
     setUserInfo(userDetails);
   }, []);
@@ -37,7 +37,7 @@ const Header = () => {
           name: resp?.data?.name,
           picture: resp?.data?.picture,
         });
-        localStorage.setItem("user", JSON.stringify(resp?.data));
+        sessionStorage.setItem("user", JSON.stringify(resp?.data));
       })
       .catch((error) => setgoogleError(error))
       .finally(() => {
@@ -51,7 +51,7 @@ const Header = () => {
     onError: googleError,
   });
   const handleLogout = () => {
-    localStorage.removeItem("user");
+    sessionStorage.removeItem("user");
     window.location.reload();
   };
   return (

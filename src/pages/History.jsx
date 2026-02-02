@@ -8,7 +8,7 @@ const History = () => {
   const [userInfo, setUserInfo] = useState(null);
   
     useEffect(() => {
-      const data = localStorage.getItem("user");
+      const data = sessionStorage.getItem("user");
       const userDetails = JSON.parse(data);
       setUserInfo(userDetails);
     }, []);
